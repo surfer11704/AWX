@@ -5,7 +5,9 @@
   tasks:
 
   - name: Enable memory leak in the business backend
-    command:
-      kubectl exec --namespace=easytravel -it $(kubectl get pod -l "type=backend-pod" --namespace=easytravel -o jsonpath='{.items[0].metadata.name}') -- curl "http://localhost:8080/services/ConfigurationService/setPluginEnabled?name=MediumMemoryLeak&enabled=true"
-      ignore_errors: yes
+    uri:
+      url: "http://localhost:8091/services/ConfigurationService/setPluginEnabled?name=MediumMemoryLeak&enabled=true"
+      method: GET
+      status_code: [200, 201, 202]
+      validate_certs: no
     delegate_to: easyTravel
