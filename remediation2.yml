@@ -6,5 +6,5 @@
 
   - name: Delete easytravel pods
     command: "kubectl delete pod -n easytravel --all"
-    delegate_to: easyTravel
+    
 
