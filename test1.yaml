@@ -1,12 +1,13 @@
 ---
-- hosts: localhost
-  gather_facts: false
-  connection: local
+- name: RETRIEVE WORKER NODE DETAILS FROM KUBERNETES NODE
+  hosts: localhost
+  gather_facts: no
 
+  collections: 
+    - community.kubernetes
+  
   tasks:
-    - name: Ensure the myapp Namespace exists.
-      community.kubernetes.k8s:
-        api_version: v1
-        kind: Namespace
-        name: myapp
-        state: present
+  - name: GET WORKER NODE DETAILS
+    community.kubernetes.k8s_info:
+      kind: Node
+      namespace: default 
