@@ -61,7 +61,7 @@
       timeout: 30
 
   - name: Restart easytravel
-    shell: sudo sh /home/michiel_otten7325/easytravel-2.0.0-x64/startEasyTravelAWX.sh
+    shell: sudo sh /opt/easytravel/easytravel-2.0.0-x64/resources/startEasyTravelAWX.sh
     delegate_to: "{{ dt_process_host_ip_address }}"
 
   - name: "wait for easytravel console to come up"
