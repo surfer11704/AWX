@@ -49,7 +49,7 @@
 
   - name: 'get process hostname: set facts from execution'
     set_fact:
-      dt_process_host_ip_address: '{{ dthostresponse.json.gcePublicIpAddresses[0] }}'
+      dt_process_host_ip_address: '{{ dthostresponse.json.ipAddresses[0] }}'
 
   - name: Stop easyTravel processses
     command: sudo /usr/bin/pkill -f 'java'
