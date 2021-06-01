@@ -58,7 +58,7 @@
 
   - name: Sleep for 8 seconds
     wait_for:
-      timeout: 20
+      timeout: 30
 
   - name: Restart easytravel
     shell: nohup sh /home/michiel_otten7325/easytravel-2.0.0-x64/weblauncher/weblauncher.sh >/dev/null 2>&1 &
