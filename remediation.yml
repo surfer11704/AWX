@@ -78,16 +78,6 @@
     wait_for:
       timeout: 15
 
-  - name: Refresh easytravel
-    command: timeout 30s /usr/bin/node easytravel.js
-    args:
-      chdir: ~/node/
-    delegate_to: "{{ dt_process_host_ip_address }}"
-
-  - name: Sleep for 10 seconds
-    wait_for:
-      timeout: 10
-
   - name: Close chrome browser process
     command: /usr/bin/pkill -f 'chrome'
     ignore_errors: yes
