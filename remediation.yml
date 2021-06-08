@@ -58,7 +58,7 @@
 
   - name: Sleep for 8 seconds
     wait_for:
-      timeout: 30
+      timeout: 10
 
   - name: Restart easytravel
     shell: sudo sh /opt/easytravel/easytravel-2.0.0-x64/resources/starteasyTravelAWX.sh
