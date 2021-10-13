@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  become: no
+
+  tasks:
+
+  - name: Sleep for {{ number }} seconds before refreshing easyTravel
+    wait_for:
+      timeout: {{ number }}
+      
+
+  - name: 'push metric to dynatrace API'
+    uri:
+      url: "https://acc.totalapm.idm.atos.net/e/ef713de5-28b4-45ea-9479-d150739df904/api/v2/metrics/ingest"
+      method: POST
+      validate_certs: no
+      use_proxy: no
+      headers:
+        Content-Type: "application/json"
+        Authorization: "Api-token {{ dynatrace_api_token }}"
+      body:
+        data: ''bookings.informationSend,bookingnumber="{{ $bookingID }}" 1''
+      body_format: json
