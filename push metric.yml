@@ -19,3 +19,4 @@
         Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
+      when: result.status == 202
