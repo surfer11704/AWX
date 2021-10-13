@@ -19,5 +19,5 @@
         Content-Type: "application/json"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body:
-        data: 'bookings.informationSend,bookingnumber="{{ $bookingID }}" 1'
+        data: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
       body_format: json
