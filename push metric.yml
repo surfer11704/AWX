@@ -12,6 +12,7 @@
   - name: 'push metric to dynatrace API'
     uri:
       url: "https://acc.totalapm.idm.atos.net/e/ef713de5-28b4-45ea-9479-d150739df904/api/v2/metrics/ingest"
+      status_code: 202
       method: POST
       validate_certs: no
       use_proxy: no
@@ -19,4 +20,4 @@
         Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
-      until: result.status == 202
+     
