@@ -16,7 +16,7 @@
       validate_certs: no
       use_proxy: no
       headers:
-        Content-Type: "application/json"
+        Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body:
         data: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
