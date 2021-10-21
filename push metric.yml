@@ -5,8 +5,6 @@
   tasks:
 
   - name: Sleep for {{ number }} seconds before refreshing easyTravel
-    wait_for:
-      timeout: "{{ number }}"
       
 
   - name: 'push metric to dynatrace API'
