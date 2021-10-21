@@ -4,9 +4,6 @@
 
   tasks:
 
-  - name: Sleep for {{ number }} seconds before refreshing easyTravel
-      
-
   - name: 'push metric to dynatrace API'
     uri:
       url: "https://acc.totalapm.idm.atos.net/e/ef713de5-28b4-45ea-9479-d150739df904/api/v2/metrics/ingest"
