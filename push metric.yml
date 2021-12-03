@@ -20,10 +20,6 @@
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
 
-  - name: random wait 0-30 seconds
-    wait_for:
-      timeout: "{{ 30 | random }}"
-
   - name: Post other metric
     uri:
       url: https://ansible.demo.dpm.atos.net/api/v2/job_templates/25/launch/
