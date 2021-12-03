@@ -19,24 +19,20 @@
         Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
-    register: push_metric 
 
   - name: random wait 0-30 seconds
     wait_for:
       timeout: "{{ 30 | random }}"
-  - name: debug parameter
-    debug:
-      var: push_metric.failed
 
-  - name: 'push second metric to dynatrace API'
+  - name: Post other metric
     uri:
-      url: "https://acc.totalapm.idm.atos.net/e/ef713de5-28b4-45ea-9479-d150739df904/api/v2/metrics/ingest"
-      status_code: 202
+      url: https://ansible.demo.dpm.atos.net/api/v2/job_templates/25/launch/
+      user: michiel
+      password: admin
       method: POST
-      validate_certs: no
-      use_proxy: no
-      headers:
-        Content-Type: "text/plain"
-        Authorization: "Api-token {{ dynatrace_api_token }}"
-      body: 'vendor.informationSend,bookingnumber="{{ bookingID }}" 1'
-       
+      body: 
+        extra_vars: "{\"bookingID\": \"998430f0-5bb3-4638-b897-161bbe187d02\"}"
+      force_basic_auth: yes
+      status_code: 201
+      body_format: json
+
