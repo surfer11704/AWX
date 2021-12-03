@@ -1,0 +1,10 @@
+- hosts: localhost
+  become: no
+
+  tasks:
+  
+    - name: include metric 1
+      include_tasks: push_metric.yml
+      
+    - name: include metric 2
+      include_tasks: extra_metric.yml 

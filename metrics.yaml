@@ -1,7 +1,0 @@
-- hosts: localhost
-  become: no
-
-  tasks:
-  
-    - name: include push metric
-      incluse_tasks: push_metric.yaml
