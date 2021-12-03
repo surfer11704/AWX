@@ -3,8 +3,5 @@
 
   tasks:
   
-    - name: include metric 1
-      include_tasks: push metric.yml
-      
     - name: include metric 2
       include_tasks: extra_metric.yml 
