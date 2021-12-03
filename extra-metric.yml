@@ -14,5 +14,5 @@
       headers:
         Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
-      body: 'vendor.informationSend="{{ bookingID }}" 1'
+      body: 'vendor.informationSend,bookingnumber="{{ bookingID }}" 1'
  
