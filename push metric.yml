@@ -16,3 +16,8 @@
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'bookings.informationSend,bookingnumber="{{ bookingID }}" 1'
     register: push_metric 
+
+
+  - name: push metric output
+    debug:
+        var: push_metric.stdout
