@@ -6,7 +6,7 @@
 
   - name: random wait 0-5 seconds
     wait_for:
-      timeout: "{{ 5 | random }}"
+      timeout: "{{ 120 | random }}"
       
   - name: 'push metric to dynatrace API'
     uri:
