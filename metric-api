@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: no
+
+  tasks:
+  - name: Post other metric
+    uri:
+      url: https://ansible.demo.dpm.atos.net/api/v2/job_templates/25/launch/
+      user: michiel
+      password: admin
+      method: POST
+      body: "{{ {"extra_vars":{"bookingID":"11"}}}"
+      force_basic_auth: yes
+      status_code: 201
+      body_format: json
