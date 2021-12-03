@@ -3,5 +3,6 @@
 
   tasks:
   
-    - name: include metric 2
-      include_tasks: extra_metric.yml 
+    - name: sleep random
+      wait_for:
+        timeout: "{{ 60 | random }}"
