@@ -23,7 +23,7 @@
 
   - name: random wait 0-30 seconds
     wait_for:
-      timeout: "{{ 120 | random }}"
+      timeout: "{{ 30 | random }}"
   - name: debug parameter
     debug:
       var: push_metric.failed
