@@ -19,7 +19,7 @@
 
   - name: random wait 0-30 seconds
     wait_for:
-      timeout: "{{ 30 | random }}"
+      timeout: "{{ 10 | random }}"
   - name: debug parameter
     debug:
       var: push_metric.failed
@@ -35,4 +35,4 @@
         Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'vendor.informationSend="{{ bookingID }}" 1'
-      when: push_metric.failed == false    
+       
