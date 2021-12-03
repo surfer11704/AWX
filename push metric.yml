@@ -20,4 +20,4 @@
 
   - name: push metric output
     debug:
-        var: push_metric.stdout
+        var: push_metric
