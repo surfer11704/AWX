@@ -9,7 +9,7 @@
       user: michiel
       password: admin
       method: POST
-      body: {"bookingID": "123"} 
+      body: {"extra_vars": {""bookingID": "123"}} 
       force_basic_auth: yes
       status_code: 201
       body_format: json
