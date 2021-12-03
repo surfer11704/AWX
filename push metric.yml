@@ -35,4 +35,4 @@
         Content-Type: "text/plain"
         Authorization: "Api-token {{ dynatrace_api_token }}"
       body: 'vendor.informationSend="{{ bookingID }}" 1'
-      when: push_metric.failed == "false"    
+      when: push_metric.failed == false    
