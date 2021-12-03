@@ -4,6 +4,9 @@
 
   tasks:
 
+  - name: random wait 0-5 seconds
+    wait_for:
+      timeout: "{{ 20 | random }}"
   - name: 'push second metric to dynatrace API'
     uri:
       url: "https://acc.totalapm.idm.atos.net/e/ef713de5-28b4-45ea-9479-d150739df904/api/v2/metrics/ingest"
