@@ -31,7 +31,7 @@
       password: admin
       method: POST
       body: 
-        extra_vars: "{\"bookingID\": \"998430f0-5bb3-4638-b897-161bbe187d02\"}"
+        extra_vars: "{\"bookingID\": \"{{ bookingID }}"}"
       force_basic_auth: yes
       status_code: 201
       body_format: json
