@@ -9,4 +9,4 @@
     register: timeout 
     
   - debug:    
-      msg: "System {{ inventory_hostname }} has uuid {{ timeout }} "
+      msg: "this job ran on system {{ inventory_hostname }} and waited {{ timeout.elapsed }} seconds to finish "
