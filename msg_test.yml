@@ -3,7 +3,6 @@
   become: no
 
   tasks:
-
   - name: random wait 0-5 seconds
     wait_for:
       timeout: "{{ 40 | random }}"
