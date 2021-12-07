@@ -9,4 +9,4 @@
     register: timeout  
   -name: print msg    
     debug:    
-      msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }} and waited {{ timeout }} seconds to finish"
+      msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }} "
